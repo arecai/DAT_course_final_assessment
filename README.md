@@ -7,19 +7,15 @@
 
 In this project, we help the non-for-profit Washinton Help People organization to find the most afforadable houses. 
 
-
 ### Business problem
-The non-for-profit Washinton Help People organization (WHPO)has recently received an anonymous donation to build the most number of houses for homeless people. Herein,WHOW wants to get some insights to find the cheapest houses so they can buy more houses to help more homelesses. In this project, we will use regression models to identify the factors that has a signficant impact in the house price. 
+The non-for-profit Washinton Help People organization (WHPO) has recently received an anonymous donation to build the maximum number of houses for homeless people. Herein, WHPO wants to get some insights to find the cheapest houses so they can buy more houses to help more homelesses. In this project, we will use regression models to identify the factors that have a signficant impact in the house price. 
 
 Some of the questions that we will consider are:
 
 What are the zipcodes wehre the houses are most expensive?
-What factors influece the houses price?
-
-
+What factors influecce houses price?
 
 ### The Data
-
 This project uses the King County House Sales dataset. This dataset contains house sale prices for King County, which includes Seattle. It includes homes sold between May 2014 and May 2015.
 
 The dataset contains 21597 entries and 21 columns. This project will focus on the following variables:
@@ -38,23 +34,13 @@ The dataset contains 21597 entries and 21 columns. This project will focus on th
 We will investigate how those variables influence in the price of the houses
 
 
-
 ## METHODS 
 
-We first investigate whether renovating a house signficantly impact the house prices. Running a t-test, we observed that renovating houses have a signifcant effect in price salary (t-test, pvalue: 4.797932412475557e-18). 
-The average price for renovated is 759316.8022151899, which represents 1.4-fold increase compared to non-renovated houses (average price = 532194.4358991687)
+First we perform a couple of t-test analysis to study the effect of renovation and waterviews in house prices. This will help us to select the cheapest houses (which is our subset of interst) to perform further studies. 
 
-As such, we decided to select only the houses that were not renovated, as we want to buy the major number of houses with a budget. 
+Secondly, we perform linear regression models to study the individual effect of zipcodes, grades and conditions in houses price, to further narrow our substet of cheaper houses. 
 
-Similarly, we run a t-test to investigate whether water views affected the price of the houses. We observed a statistical signifcance increases between the price of houses with water view (1725217.97752809 average price) compared to houses with no water views (524975.2969812347)
-
-Therefore, we filtered the houses that have no water views for furhter analysis. 
-
-Next step was to investigate which zipcodes have the most expensive house. For this reaso, we perfom a regression model to investigate the effect of zipcodes in price. From this analysis, we discarded the suburs that have a signifncant postive correlation with houses prices, and continue with the analysis of the other suburbs.
-
-One selected the suburbs of interest, we run a linear regression model to investigate the effect of grade and conditions. From this analysis, we descarded the houses whose grade signficnatly and positively increase the salary price. 
-
-Once we have performed the filters to select the houses with lowest price, we run a linear regression model to investigate the effect of the variales:
+Finally, we perform a linear regression model in our subset of cheap houses to undesrtand the effect of the following continous variables on price: 
 
 * bedroomsNumber
 * bathroomsNumber
@@ -67,12 +53,12 @@ Once we have performed the filters to select the houses with lowest price, we ru
 
 ## RESULTS
 
-### Effects of renovation in price
+### Effects of renovation on price
 **Analysis**: t-test
 
 **Hypothesis**:
     H0 = there are no differences between renovated and non-renovated houses
-    H1 = there are differences between renovated and non-renovated houses
+    Ha = there are differences between renovated and non-renovated houses
 
 **Results**:
     Average price in renovated houses: 759316
@@ -85,8 +71,7 @@ Once we have performed the filters to select the houses with lowest price, we ru
 **Action**: Select only the non-renovated houses
 
 
-### Effects of waterview in price
-
+### Effects of waterview on price
 **Analysis**: t-test
 
 **Hypothesis**:
@@ -104,8 +89,7 @@ p-value: 5.1010178385823954e-17
 **Action**: Select only the houses without waterview
 
 
-### Effects of zipcode in price
-
+### Effects of zipcode on price
 **Analysis**: regression model using OLS
 
 **Results**:
@@ -121,54 +105,51 @@ For this reason, we created two lists:
 **Action**: Select only the houses that correspond to the zipcodes of interest. 
 
     
-### Effects of condition in price
-
+### Effects of condition on price
 **Analysis**: regression model using OLS
 
 **Results**:
 
-The adjusted R-squared value for the whole mode is 0.015, which is a very low value. This means that only 1.5% of the price variability can be explained by condition.
+The adjusted R-squared value for the whole model is 0.015, which is a very low value. This means that only 1.5% of the price variability can be explained by condition.
 
 However, we observe that condition 3, 4 and 5 signifncatly and positively contribute to the price of houses
 
 **Action**: As only 25 housess corresspond to condition 1, we can't remove these data
 
 
-### Effects of grade in price
-
+### Effects of grade on price
 **Analysis**: regression model using OLS
 
 **Results**:
 
-The adjusted R-squared value for the whole mode is 0.433, which is a very low value. This means that only 43.3% of the price variability can be explained by grade.
+The adjusted R-squared value for the whole model is 0.433, which is a low value. This means that only 43.3% of the price variability can be explained by grade.
 
-However, we observe that grade 9, 10 and 11 signifncatly and positively contribute to the price of houses
+However, we observe that grade 9, 10 and 11 significantly and positively contribute to the price of houses
 
 **Action**: Exclude houses correspoding to grade 9, 10 and 11 for further analysis
     
 
-### Effects of number of bedrooms, number of bathrooms, number of floors, years since built, sqft living area and sqft living lot in price
-
+### Effects of number of bedrooms, number of bathrooms, number of floors, years since built, sqft living area and sqft living lot on price
 **Analysis**: regression model using OLS
 
 **Results**:
 
-The adjusted R-squared value for the whole mode is 0.465, which is a very low value. This means that only 46.5% of the price variability can be explained by grade.
+The adjusted R-squared value for the whole mode is 0.465, which is a  low value. This means that only 46.5% of the price variability can be explained by grade.
 
-We observe that number of bedrooms, number of bathrooms, number of floors, sqft living area and sqft living lot have a significant contribution to house price. The years since the hougses was built do not significantly impact on the price. 
+We observe that number of bedrooms, number of bathrooms, sqft living area and sqft living lot have a significant contribution to house price. The years since the house was built and number of floors do not significantly impact on the price. 
 
-From all these factors, the sqft living area is the variable that affects the most to the price, with a coeficient value of 0..52
+From this regression analysis, we can determine that the sqft living area is the variable that affects the most to the price, as it has the highes coeficient value (coef = 0.52) and a p_value < 0.05.
 
 
 ## CONCLUSIONS
 We provide the following business recomendations:
 
-* **Insights 1** Look for non-renovated houses
-* **Insights 2** Look for houses that have no waterview
-* **Insights 3** Look for houses in the following zipcodes: 98002, 98003, 98022, 98023, 98030, 98031, 98032, 98055, 98106, 98148, 98168, 98178, 98188, 98198.
-* **Insights 4** : look for houses corresponding to condition 2
-* **Insights 5** : look for houses below grade 9
-* **Insights 6** : focus your search on houses with the lowest sqft living
+* **Recomendations 1**: Look for non-renovated houses.
+* **Recomendations 2**: Look for houses that have no waterview.
+* **Recomendations 3**: Look for houses in the following zipcodes: 98002, 98003, 98022, 98023, 98030, 98031, 98032, 98055, 98106, 98148, 98168, 98178, 98188, 98198.
+* **Recomendations 4**: Look for houses below condition 3.
+* **Recomendations 5**: Look for houses below grade 9.
+* **Recomendations 6**: center your search on houses with the lowest sqft living.
 
 
 
