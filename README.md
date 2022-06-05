@@ -5,10 +5,10 @@
 
 ## Project Overview
 
-In this project, we help the non-for-profit Washinton Help People organization to find the most afforadable houses. 
+In this project, we help the non-for-profit Washington Help People organization to find the most affordable houses. 
 
 ### Business problem
-The non-for-profit Washinton Help People organization (WHPO) has recently received an anonymous donation to build the maximum number of houses for homeless people. Herein, WHPO wants to get some insights to find the cheapest houses so they can buy more houses to help more homelesses. In this project, we will use regression models to identify the factors that have a signficant impact in the house price. 
+The non-for-profit Washington Help People Organization (WHPO) has recently received an anonymous donation to build the maximum number of houses for homeless people. As such, WHPO wants to get some insights to find the cheapest houses so they can buy more units to help more homeless people. In this project, we will use regression models to identify the factors that have a significant impact on house price. 
 
 Some of the questions that we will consider are:
 
@@ -25,30 +25,26 @@ The dataset contains 21597 entries and 21 columns. This project will focus on th
 * Grade
 * Condition
 * bedroomsNumber
-* bathroomsNumber
 * sqft_livingsquare
 * sqft_lotsquare
 * yr_built
-* floorsTotal
 
-We will investigate how those variables influence in the price of the houses
+We will investigate how those variables influence on the price of the houses.
 
 
 ## METHODS 
 
-First we perform a couple of t-test analysis to study the effect of renovation and waterviews in house prices. This will help us to select the cheapest houses (which is our subset of interst) to perform further studies. 
+At the core of this project, there is a filtering process that allows us to create a subset of affordable houses on which we will study the effect of several continuous variables.
 
-Secondly, we perform linear regression models to study the individual effect of zipcodes, grades and conditions in houses price, to further narrow our substet of cheaper houses. 
+First, we perform a couple of t-test analyses to study the effect of renovation and water views on house prices. This will help us select the cheapest houses (our subset of interest) to perform further studies. 
 
-Finally, we perform a linear regression model in our subset of cheap houses to undesrtand the effect of the following continous variables on price: 
+Secondly, we perform linear regression models to study the individual effect of zipcodes, grades and conditions on houses price to further narrow our subset of cheaper houses. 
 
-* bedroomsNumber
-* bathroomsNumber
+Finally, we perform a linear regression model in our subset of cheap houses to understand the effect of the following continuous variables on price: 
+
 * sqft_livingsquare
 * sqft_lotsquare
 * yr_built
-* floorsTotal
-
 
 
 ## RESULTS
@@ -114,7 +110,7 @@ The adjusted R-squared value for the whole model is 0.015, which is a very low v
 
 However, we observe that condition 3, 4 and 5 signifncatly and positively contribute to the price of houses
 
-**Action**: As only 25 housess corresspond to condition 1, we can't remove these data
+**Action**: As only 27 housess corresspond to condition below 3, we can't remove these data
 
 
 ### Effects of grade on price
@@ -127,16 +123,29 @@ The adjusted R-squared value for the whole model is 0.433, which is a low value.
 However, we observe that grade 9, 10 and 11 significantly and positively contribute to the price of houses
 
 **Action**: Exclude houses correspoding to grade 9, 10 and 11 for further analysis
+
+### Effects of number of bedrooms on price
+**Analysis**: regression model using OLS
+
+**Results**:
+
+The adjusted R-squared value for the whole model is 0.132, which is a very low value. This means that only 13.2% of the price variability can be explained by the number of bedrooms.
+
+However, we we can see that each number of bedrooms signfincantly and positively contribute to the house price and that there is an increase in the coefficient as the number of bedrooms increase. 
+
+**Meaning**: The more number of bedrooms, the more expensive the house.
+
+**Action**: No further action. It is up to WHPO to decide how many bedrooms they want to buy, based on homeless population. 
     
 
-### Effects of number of bedrooms, number of bathrooms, number of floors, years since built, sqft living area and sqft living lot on price
+### Effects of years since built, sqft living area and sqft living lot on price
 **Analysis**: regression model using OLS
 
 **Results**:
 
 The adjusted R-squared value for the whole mode is 0.465, which is a  low value. This means that only 46.5% of the price variability can be explained by grade.
 
-We observe that number of bedrooms, number of bathrooms, sqft living area and sqft living lot have a significant contribution to house price. The years since the house was built and number of floors do not significantly impact on the price. 
+We observe that number of bedrooms, number of bathrooms, sqft living area and sqft living lot have a significant contribution to house price. The years since the house was built does not significantly impact on the price. 
 
 From this regression analysis, we can determine that the sqft living area is the variable that affects the most to the price, as it has the highes coeficient value (coef = 0.52) and a p_value < 0.05.
 
