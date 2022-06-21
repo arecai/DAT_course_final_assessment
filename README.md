@@ -84,9 +84,8 @@ Missing values are tagged with -200 value.
 R-squared = 0.951
 
 **Variables that significantly and positively correlate with Temperature** 
-
 | Variable | Coefficient |
-| --- | --- | --- |
+| --- | --- | 
 | PT08.S1(CO) | 1.466450 |
 | PT08.S2(NMHC) | 2.202890 |
 | NOx(GT) | 0.851999 |
@@ -95,10 +94,11 @@ R-squared = 0.951
 | AH | 5.633257 |
 
 
+
 **Variables that significantly and positively correlate with Temperature** 
 
 | Variable | Coefficient |
-| --- | --- | --- |
+| --- | --- |
 | CO(GT) | -0.237414 |
 | NMHC(GT) | -0.097423 |
 | C6H6(GT) | -0.91671 |
