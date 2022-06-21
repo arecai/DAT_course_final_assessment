@@ -3,169 +3,112 @@
 ***Author:*** Ariadna Recasens
 
 
-| Variable | Average 2014 | Average 2015 |
-| --- | --- | --- |
-| COGT | 2.036723 | 2.030975 |
-| COGT | 2.036723 | 2.030975 |
 
 
-## Project Overview
 
-In this project, we help the non-for-profit Washington Help People organization to find the most affordable houses. 
+## 1. OVERVIEW
 
-### Business problem
-The non-for-profit Washington Help People Organization (WHPO) has recently received an anonymous donation to build the maximum number of houses for homeless people. As such, WHPO wants to get some insights to find the cheapest houses so they can buy more units to help more homeless people. In this project, we will use regression models to identify the factors that have a significant impact on house price. 
+## 2. BUSINESS PROBLEM
 
-Some of the questions that we will consider are:
+## 3. DATA UNDERSTANDING
+This project explores an [Air Quality Data Set](https://archive.ics.uci.edu/ml/datasets/Air+Quality) containing 9358 instances of hourly averaged responses from an array of 5 metal oxide chemical sensors embedded in an Air Quality Chemical Multisensor Device. 
 
-What are the zipcodes wehre the houses are most expensive?
-What factors influecce houses price?
+The device was located on the field in a significantly polluted area, at road level,within an Italian city. 
 
-### The Data
-This project uses the King County House Sales dataset. This dataset contains house sale prices for King County, which includes Seattle. It includes homes sold between May 2014 and May 2015.
+Data were recorded from March 2004 to February 2005 (one year) representing the longest freely available recordings of on field deployed air quality chemical sensor devices responses. 
 
-The dataset contains 21597 entries and 21 columns. This project will focus on the following variables:
-* Price
-* Zipcode
-* Waterfront
-* Grade
-* Condition
-* bedroomsNumber
-* sqft_livingsquare
-* sqft_lotsquare
-* yr_built
+Missing values are tagged with -200 value.
 
-We will investigate how those variables influence on the price of the houses.
-
+**Attribute Information**:
+* 0 Date (DD/MM/YYYY)
+* 1 Time (HH.MM.SS)
+* 2 True hourly averaged concentration CO in mg/m^3 (reference analyzer)
+* 3 PT08.S1 (tin oxide) hourly averaged sensor response (nominally CO targeted)
+* 4 True hourly averaged overall Non Metanic HydroCarbons concentration in microg/m^3 (reference analyzer)
+* 5 True hourly averaged Benzene concentration in microg/m^3 (reference analyzer)
+* 6 PT08.S2 (titania) hourly averaged sensor response (nominally NMHC targeted)
+* 7 True hourly averaged NOx concentration in ppb (reference analyzer)
+* 8 PT08.S3 (tungsten oxide) hourly averaged sensor response (nominally NOx targeted)
+* 9 True hourly averaged NO2 concentration in microg/m^3 (reference analyzer)
+* 10 PT08.S4 (tungsten oxide) hourly averaged sensor response (nominally NO2 targeted)
+* 11 PT08.S5 (indium oxide) hourly averaged sensor response (nominally O3 targeted)
+* 12 Temperature in Â°C
+* 13 Relative Humidity (%)
+* 14 AH Absolute Humidity
 
 ## METHODS 
 
-At the core of this project, there is a filtering process that allows us to create a subset of affordable houses on which we will study the effect of several continuous variables.
 
-First, we perform a couple of t-test analyses to study the effect of renovation and water views on house prices. This will help us select the cheapest houses (our subset of interest) to perform further studies. 
-
-Secondly, we perform linear regression models to study the individual effect of zipcodes, grades and conditions on houses price to further narrow our subset of cheaper houses. 
-
-Finally, we perform a linear regression model in our subset of cheap houses to understand the effect of the following continuous variables on price: 
-
-* sqft_livingsquare
-* sqft_lotsquare
-* yr_built
 
 
 ## RESULTS
 
-### Effects of renovation on price
-**Analysis**: t-test
+### Change of variables over time:
 
-**Hypothesis**:
-    H0 = there are no differences between renovated and non-renovated houses
-    Ha = there are differences between renovated and non-renovated houses
+![Changes of CO (mg/m^3) over time](./images/COGT.png)
+![Changes of tin oxide (nominally CO targeted) over time](./images/PT08S1CO.png)
+![Changes of Non Metanic HydroCarbons(mg/m^3) over time](./images/NMHCGT.png)
+![Changes of Benzene (mg/m^3) over time](./images/C6H6GT.png)
+![Changes of titania (nominally NMHC targeted) over time](./images/PT08S2NMHC.png)
+![Changes of NOx (ppb) over time](./images/NOxGT.png)
+![Changes of tungsten oxide (nominally NOx targeted) over time](./images/PT08S3NOx.png)
+![Changes of NO2 (microg/m^3) over time](./images/NO2GT.png)
+![Changes of tungsten oxide (nominally NO2 targeted) over time](./images/PT08S4NO2.png)
+![Changes of indium oxide (nominally O3 targeted) over time](./images/PT08S5O3.png)
+![Changes of Temperature (C) over time](./images/T.png)
+![Changes of relative humidty (%) over time](./images/RH.png)
+![Changes of absolute humidity over time](./images/AH.png)
 
-**Results**:
-    Average price in renovated houses: 759316
-    Average price in non-renovated houses: 532194
+### Comparision of averages between 2014 and 2015 
+| Variable | Average 2014 | Average 2015 |
+| --- | --- | --- |
+| CO(GT) | 2.036723 | 2.030975 |
+| Tin oxide - PT08.S1(CO) | 1061.597046 | 1041.919893 |
+| Non Metanic HydroCarbons - NMHC(GT) | 29.435724 |1.500000 |
+| Benzene - C6H6(GT) | 10.338383 | 7.877303 |
+| Titania - PT08.S2(NMHC) | 930.068214 | 815.172230 |
+| NOx - NOx(GT) | 170.898312 | 308.375834 |
+| tungsten oxide - PT08.S3(NOx)| 828.916174 | 720.461949 |
+| NO2 - NO2(GT) | 79.611744 | 137.482198 |
+| Tungsten oxide -  PT08.S4(NO2)| 1502.120956 | 1074.207388 |
+| indium oxide - PT08.S5(O3) | 980.447117 | 990.885180 |
+| Temperature - (T) | 20.240605 | 9.494393 |
+| Relative humidty (RH)  - PT08S5O3 | 46.753657 | 49.308055 |
+| Absolute humidty (AH) | 1.151260 | 0.704977 |
 
-**p-value**: 4.797932412475557e-18
+### Variables correlation
 
-**Meaning**: There is a significant difference between the price of renovated vs non-renovated houses
+![Changes of absolute humidity over time](./images/heatmap.png)
 
-**Action**: Select only the non-renovated houses
+### Linear regression model
+R-squared = 0.951
 
+**Variables that significantly and positively correlate with Temperature** 
 
-### Effects of waterview on price
-**Analysis**: t-test
-
-**Hypothesis**:
-    H0 = there are no differences between houses with or without waterviews 
-    H1 = there are differences between houses with or without waterviews 
-
-**Results**:
-    Average price in renovated houses: 1725217 
-    Average price in non-renovated houses: 524975
-
-p-value: 5.1010178385823954e-17
-
-**Meaning**: There is a significant difference between the price of houses with vs without waterview
-
-**Action**: Select only the houses without waterview
-
-
-### Effects of zipcode on price
-**Analysis**: regression model using OLS
-
-**Results**:
-
-The adjusted R-squared value for the whole mode is 0.457, which is a very low value. This means that only 45% of the price variability can be explained by this model.
-
-However, in this analysis we want to focus on particular zipcodes. For example, is the zipcode 98002 significantly changing the price of the houses?
-
-For this reason, we created two lists: 
-* one with zipcodes that significantly increase the price (i.e. positive coef and p_value < 0.05) --> these zipcodes will be discarded for further analysis.
-* one with zipcodes that do not signficantly change the price --> these are the zipcodes of interst
-
-**Action**: Select only the houses that correspond to the zipcodes of interest. 
-
-    
-### Effects of condition on price
-**Analysis**: regression model using OLS
-
-**Results**:
-
-The adjusted R-squared value for the whole model is 0.015, which is a very low value. This means that only 1.5% of the price variability can be explained by this model.
-
-However, we observe that condition 3, 4 and 5 signifncatly and positively contribute to the price of houses
-
-**Action**: As only 27 housess corresspond to condition below 3, we can't remove these data
+| Variable | Coefficient |
+| --- | --- | --- |
+| PT08.S1(CO) | 1.466450 |
+| PT08.S2(NMHC) | 2.202890 |
+| NOx(GT) | 0.851999 |
+| PT08.S3(NOx) | 0.658520 |
+| PT08.S4(NO2) | 2.151767 |
+| AH | 5.633257 |
 
 
-### Effects of grade on price
-**Analysis**: regression model using OLS
+**Variables that significantly and positively correlate with Temperature** 
 
-**Results**:
+| Variable | Coefficient |
+| --- | --- | --- |
+| CO(GT) | -0.237414 |
+| NMHC(GT) | -0.097423 |
+| C6H6(GT) | -0.91671 |
+| NO2(GT) | -0.640658 |
+| PT08.S5(O3) | -1.964199 |
+| RH | -6.425729 |
 
-The adjusted R-squared value for the whole model is 0.433, which is a low value. This means that only 43.3% of the price variability can be explained by this model.
-
-However, we observe that grade 9, 10 and 11 significantly and positively contribute to the price of houses
-
-**Action**: Exclude houses correspoding to grade 9, 10 and 11 for further analysis
-
-### Effects of number of bedrooms on price
-**Analysis**: regression model using OLS
-
-**Results**:
-
-The adjusted R-squared value for the whole model is 0.132, which is a very low value. This means that only 13.2% of the price variability can be explained by this model.
-
-However, we we can see that each number of bedrooms signfincantly and positively contribute to the house price and that there is an increase in the coefficient as the number of bedrooms increase. 
-
-**Meaning**: The more number of bedrooms, the more expensive the house.
-
-**Action**: No further action. It is up to WHPO to decide how many bedrooms they want to buy, based on homeless population. 
-    
-
-### Effects of years since built, sqft living area and sqft living lot on price
-**Analysis**: regression model using OLS
-
-**Results**:
-
-The adjusted R-squared value for the whole mode is 0.446, which is a  low value. This means that only 44.6% of the price variability can be explained by this model.
-
-SQFT living area and lot have a significant positive contribution to the house price in our subset of interest (the more area, the more expensive)
-Years since built has a significant negative contribution to the price (the oldest, the cheapest)
-
-From this regression analysis, we can determine that the sqft living area is the variable that affects the most to the price, as it has the highest coefficient value (coef = 0.56) and a p_value < 0.05.
 
 
 ## CONCLUSIONS
-We provide the following business recomendations:
-
-* **Recommendations 1**: Look for non-renovated houses.
-* **Recommendations 2**: Look for houses that have no waterview.
-* **Recommendations 3**: Look for houses in the following zipcodes: 98002, 98003, 98022, 98023, 98030, 98031, 98032, 98055, 98106, 98148, 98168, 98178, 98188, 98198.
-* **Recommendations 4**: Look for houses below condition 3.
-* **Recommendations 5**: Look for houses below grade 9.
-* **Recommendations 6**: center your search on houses with the lowest sqft living. Older houses will be cheaper
 
 
 
