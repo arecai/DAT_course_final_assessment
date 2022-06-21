@@ -20,9 +20,9 @@ Data were recorded from March 2004 to February 2005 (one year) representing the 
 Missing values are tagged with -200 value.
 
 **Attribute Information**:
-* 0 Date (DD/MM/YYYY)
-* 1 Time (HH.MM.SS)
-* 2 True hourly averaged concentration CO in mg/m^3 (reference analyzer)
+1. Date (DD/MM/YYYY)
+1. Time (HH.MM.SS)
+1. True hourly averaged concentration CO in mg/m^3 (reference analyzer)
 * 3 PT08.S1 (tin oxide) hourly averaged sensor response (nominally CO targeted)
 * 4 True hourly averaged overall Non Metanic HydroCarbons concentration in microg/m^3 (reference analyzer)
 * 5 True hourly averaged Benzene concentration in microg/m^3 (reference analyzer)
