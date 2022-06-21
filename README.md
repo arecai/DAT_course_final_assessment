@@ -3,6 +3,12 @@
 ***Author:*** Ariadna Recasens
 
 
+| Variable | Average 2014 | Average 2015 |
+| --- | --- | --- |
+| COGT | 2.036723 | 2.030975 |
+| COGT | 2.036723 | 2.030975 |
+
+
 ## Project Overview
 
 In this project, we help the non-for-profit Washington Help People organization to find the most affordable houses. 
