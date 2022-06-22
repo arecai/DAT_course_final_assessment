@@ -105,12 +105,14 @@ R-squared = 0.951
 
 ## 6. CONCLUSIONS
 * All the metal oxides studied in this model significantly affect T in Positano.
-* Benzene,  NO2 and tungsten oxide (nominally NO2 targeted) positively contribute to T raise (the more concentration of these oxides, the more Temperature), being Benzene the one with the highest negative impact. 
-* CO, tin oxide, Titania (PT08.S2), NOx(GT), indium oxide, and tungsten oxide (nominally 03 targeted) negatively contribute to T (the more concentration of these oxides, the less T), being Titania the one with the highest positive impact. 
+* Benzene,  NO2 and tungsten oxide (nominally NO2 targeted) positively contribute to T raise (the more concentration of these oxides, the more Temperature), being Benzene the one with the highest positive impact. 
+* CO, tin oxide, Titania (PT08.S2), NOx(GT), indium oxide, and tungsten oxide (nominally 03 targeted) negatively contribute to T (the more concentration of these oxides, the less T), being Titania the one with the highest negative impact. 
 
 
 ## 7. BUSINESS RECOMMENDATIONS
 We observe a big drop in Temperature between 2014 and 2015, with the T average in 2014 of 20.2 C vs 9.4 C in 2015. This 10C difference could be an indicator that the T sensor was damaged. We recommend checking the Tempearture Sensor and repeating the study with new collected data.
+
+Investigate why the levels of NOx almost double in 2015.
 
 In terms of regulation, since Benzene is the one that contributes the most to Temperature increase, we recommend that the new regulations aim to reduce the emissions of Benzene. 
 
