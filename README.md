@@ -41,7 +41,6 @@ Missing values are tagged with -200 value.
 ## 4. METHODS 
 1. Data exploration: How do variables change over time?
 1. Data exploration: how did the average of each variables change between 2014 and 2015?
-1. Data exploration: How do the variables correlate between each other?
 1. Linear regression model: Iteration process to imporve the model by studying multicolinearity and interactions. The model has been validate using train and testing subset. 
 
 
