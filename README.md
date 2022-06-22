@@ -79,9 +79,6 @@ Missing values are tagged with -200 value.
 | Relative humidty (RH)  - PT08S5O3 | 46.753657 | 49.308055 |
 | Absolute humidty (AH) | 1.151260 | 0.704977 |
 
-### Variables correlation
-
-![Changes of absolute humidity over time](./images/heatmap.png)
 
 ### Linear regression model
 R-squared = 0.951
@@ -89,33 +86,32 @@ R-squared = 0.951
 **Variables that significantly and positively correlate with Temperature** 
 | Variable | Coefficient |
 | --- | --- | 
-| PT08.S2(NMHC) | 23.803690 |
-| NO2(GT) | 1.610673 |
-| PT08.S4(NO2) | 9.396746 |
+| C6H6(GT) | 11.09684 |
+| NO2(GT) | 1.925704 |
+| PT08.S4(NO2) | 6.673217 |
 
 
 **Variables that significantly and negatively correlate with Temperature** 
 
 | Variable | Coefficient |
 | --- | --- |
-| CO(GT) | -0.489987 |
-| PT08.S1(CO) | -6.249633 |
-| NMHC(GT) | -1.112450 |
-| C6H6(GT) | -16.886120 |
-| NOx(GT) | -2.361071 |
-| PT08.S3(NOx) | -2.201539 |
-| PT08.S5(O3) | -6.403627 |
+| CO(GT) | -0.561600 |
+| PT08.S1(CO) | -4.501010 |
+| PT08.S2(NMHC)) | -5.678621 |
+| NOx(GT) | -2.7477100 |
+| PT08.S3(NOx) | -3.156382 |
+| PT08.S5(O3) | -5.449668 |
 
 
 ## 6. CONCLUSIONS
 * All the metal oxides studied in this model significantly affect T in Positano.
-* Titania (PT08.S2), NO2 and tungsten oxide (nominally NO2 targeted) positively contribute to T raise (the more concentration of these oxides, the more Temperature), being Titania the one with the highest negative impact. 
-* CO, tin oxide, Non-Metanic HydroCarbons, Benzene, indium oxide, and tungsten oxide (nominally NOx targeted) negatively contribute to T (the more concentration of these oxides, the less T), being Benzene the one with the highest positive impact. 
+* Benzene,  NO2 and tungsten oxide (nominally NO2 targeted) positively contribute to T raise (the more concentration of these oxides, the more Temperature), being Benzene the one with the highest negative impact. 
+* CO, tin oxide, Titania (PT08.S2), NOx(GT), indium oxide, and tungsten oxide (nominally 03 targeted) negatively contribute to T (the more concentration of these oxides, the less T), being Titania the one with the highest positive impact. 
 
 
 ## 7. BUSINESS RECOMMENDATIONS
 We observe a big drop in Temperature between 2014 and 2015, with the T average in 2014 of 20.2 C vs 9.4 C in 2015. This 10C difference could be an indicator that the T sensor was damaged. We recommend checking the Tempearture Sensor and repeating the study with new collected data.
 
-In terms of regulation, since Titania is the one that contributes the most to Temperature increase, we recommend that the new regulations aim to reduce the emissions of Titania. 
+In terms of regulation, since Benzene is the one that contributes the most to Temperature increase, we recommend that the new regulations aim to reduce the emissions of Benzene. 
 
 
