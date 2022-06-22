@@ -1,27 +1,26 @@
-# EFFECTS OF METAL OXIDES IN POSITANO TEMPERATURE 
+# EFFECTS OF METAL OXIDES IN POSITANO's TEMPERATURE 
 
 ***Author:*** Ariadna Recasens
 
 
 ## 1. OVERVIEW
-This project explores the effect of metal oxides in the temperature of Positano to help the new mayor implement novel regulations. 
+This project explores the effect of metal oxides on the temperature of Positano to help the new mayor implement novel regulations. 
 
 
 ## 2. BUSINESS PROBLEM
-The new mayor of Positano, a small italian city, is worried about climate change and wants to understand whether metal oxides that are released from the city's industries have an impact in warming climate of the city in order to introduce new regulations.
+The new mayor of Positano, a small Italian city, is worried about climate change and wants to understand whether metal oxides that are released from the city's industries impact the city's warming climate to introduce new regulations.
 
-In this project, we will create a regression linear model to understand the effect of ten metal oxides in Positano's temperature, in order to help the new mayor introduce new regulations to reduce climate change. 
+In this project, we will create a linear regression model to understand the effect of ten metal oxides on Positano's temperature to help the new mayor introduce new regulations to reduce climate change. 
 
 
 ## 3. DATA UNDERSTANDING
 This project explores an [Air Quality Data Set](https://archive.ics.uci.edu/ml/datasets/Air+Quality) containing 9358 instances of hourly averaged responses from an array of 5 metal oxide chemical sensors embedded in an Air Quality Chemical Multisensor Device. 
 
-The device was located on the field in a significantly polluted area, at road level,within an Italian city. 
+The device was located on the field in a significantly polluted area, at road level, within an Italian city. 
 
-Data were recorded from March 2004 to February 2005 (one year) representing the longest freely available recordings of on field deployed air quality chemical sensor devices responses. 
+Data were recorded from March 2004 to February 2005 (one year), representing the longest freely available recordings of on field-deployed air quality chemical sensor device responses. 
 
 Missing values are tagged with -200 value.
-
 **Attribute Information**:
 1. Date (DD/MM/YYYY)
 1. Time (HH.MM.SS)
@@ -109,14 +108,14 @@ R-squared = 0.951
 | PT08.S5(O3) | -6.403627 |
 
 
-## CONCLUSIONS
+## 6. CONCLUSIONS
 * All the metal oxides studied in this model significantly affect T in Positano.
-* Titania (PT08.S2), NO2 and tungsten oxide (nominally NO2 targeted) positvely contribute to T raise (the more concetration of these oxides, the more temperature), being Titania the one with a highest negative impact. 
-* CO, tin oxide, Non Metanic HydroCarbons, Benzene, indium oxide and tungsten oxide (nominally NOx targeted) negatively contribute to T (the more concentration of these oxides, the less T), being Benzene the one with a highest positive impact. 
+* Titania (PT08.S2), NO2 and tungsten oxide (nominally NO2 targeted) positively contribute to T raise (the more concentration of these oxides, the more Temperature), being Titania the one with the highest negative impact. 
+* CO, tin oxide, Non-Metanic HydroCarbons, Benzene, indium oxide, and tungsten oxide (nominally NOx targeted) negatively contribute to T (the more concentration of these oxides, the less T), being Benzene the one with the highest positive impact. 
 
 
-## BUSINES RECOMENDATIONS
-We observe that there was a big drop of Temperature between 2014 and 2015, being the T average in 2014 of 20.240605 Celsius vs 9.494393 Celsius in 2015. This 10C difference could be an indicator that the T sensor was damage. We would recommend to check the Tempearture Sensor and repeat the study with new collected data.
+## 7. BUSINESS RECOMMENDATIONS
+We observe a big drop in Temperature between 2014 and 2015, with the T average in 2014 of 20.2 C vs 9.4 C in 2015. This 10C difference could be an indicator that the T sensor was damaged. We recommend checking the Tempearture Sensor and repeating the study with new collected data.
 
 In terms of regulation, since Titania is the one that contributes the most to Temperature increase, we recommend that the new regulations aim to reduce the emissions of Titania. 
 
